@@ -15,4 +15,26 @@ This application helps users master Spanish by organizing educational YouTube vi
 
 ## Getting Started
 
-*(Instructions for setting up the project will be added as development progresses.)*
+## Project structure 
+
+src/
+├── components/
+│   ├── layout/
+│   │   └── Navbar.tsx
+│   ├── home/
+│   │   └── HeroSection.tsx
+│   └── ui/                        
+│       ├── Button.tsx
+│       └── Logo.tsx
+│
+├── pages/
+│   └── HomePage.tsx              
+│
+├── assets/
+│   └── images/
+│
+├── styles/
+│   └── globals.css
+│
+App.jsx
+main.jsx
