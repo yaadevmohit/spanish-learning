@@ -22,17 +22,12 @@ const Typewriter: React.FC<TypewriterProps> = ({
 
     const timeout = setTimeout(() => {
       if (!isDeleting) {
-        // Typing logic
         setText(currentFullWord.substring(0, text.length + 1));
-        
         if (text === currentFullWord) {
-          // Finished typing, wait then start deleting
           setTimeout(() => setIsDeleting(true), pauseTime);
         }
       } else {
-        // Deleting logic
         setText(currentFullWord.substring(0, text.length - 1));
-        
         if (text === '') {
           setIsDeleting(false);
           setWordIndex((prev) => (prev + 1) % words.length);
@@ -44,10 +39,8 @@ const Typewriter: React.FC<TypewriterProps> = ({
   }, [text, isDeleting, wordIndex, words, typingSpeed, deletingSpeed, pauseTime]);
 
   return (
-    <div className="flex items-center justify-center text-2xl md:text-6xl px-4 py-4 font-bold md:min-h-28">
-      <span 
-        className="text-black drop-shadow-[-4px_-4px_0px_rgba(99,102,241,0.3)]"
-      >
+    <div className="flex items-center justify-center bg-yellow-300 px-4 py-4 text-2xl font-bold min-h-16 md:min-h-28 max-w-[80%] md:text-6xl w-full text-center rounded-3xl">
+      <span className="text-black drop-shadow-[-4px_-4px_0px_rgba(99,102,241,0.3)] wrap-break-word">
         {text}
       </span>
     </div>
